@@ -1,0 +1,24 @@
+{% extends 'templates/site/base.twig' %}
+{% block content %}
+<header class="page-header" style="background-image: url('{{  TimberImage(carbon_meta('header_image', post.ID)) }}');"></header>
+
+  <div class="grid-container push-top-bottom">
+    <div class="grid-x grid-x-margin">
+      <h2>Zoekresultaten voor &quot;{{ query }}&quot;</h2>
+      {% for result in search %}
+      <div class="medium-12 cell">
+        <h3>{{ result.title }}</h3>
+        <div class="content">{{ result.content | wpautop }}</div>
+        <a href="{{ result.path }}" class="button">Ga naar resultaat</a>
+      </div>
+      {% endfor %}
+    </div>
+    {% if search.pagination.prev %}
+        <a href="{{search.pagination.prev.link}}" class="prev {{search.pagination.prev.link|length ? '' : 'invisible'}}">Prev</a>
+    {% endif %}
+    {% if search.pagination.next %}
+        <a href="{{search.pagination.next.link}}" class="next {{search.pagination.next.link|length ? '' : 'invisible'}}">Next</a>
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

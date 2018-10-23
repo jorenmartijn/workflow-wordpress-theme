@@ -1,0 +1,23 @@
+{
+    "name": "jorendegraaf/workflow-wordpress-theme",
+    "description": "Workflow WordPress theme",
+    "type": "wordpress-theme",
+    "autoload": {
+      "psr-4": {
+          "WorkflowTheme\\": "includes/"
+      }
+    },
+    "require": {
+        "timber/timber": "1.0",
+        "mindkomm/timber-integration-woocommerce": "^0.5.1",
+        "jjgrainger/wp-custom-post-type-class": "^1.4",
+        "htmlburger/carbon-fields": "^2.2"
+    },
+    "license": "GNU GPL v3",
+    "authors": [
+        {
+            "name": "Joren De Graaf",
+            "email": "jorendegraaf@gmail.com"
+        }
+    ]
+}

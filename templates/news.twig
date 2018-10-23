@@ -1,0 +1,56 @@
+{% extends 'templates/site/base.twig' %}
+{% block content %}
+<header class="page-header" style="background-image: url('{{  TimberImage(carbon_meta('header_image', post.ID)) }}');"></header>
+<div class="grid-container">
+  <div class="grid-x grid-x-margin push-top-bottom">
+    <div class="cell medium-12 "><h2 class="center upper blue">{{ post.title }}</h2></div>
+    <div class="cell medium-12 text-center "><h5 class="subtitle">{{ carbon_meta('subtitle', post.ID) }}</h5>
+</div>
+  </div>
+</div>
+<section id="home-projects" class="grey-section">
+  <div class="design variant-1 grid-container">
+      <div class="grid-x grid-margin-x">
+        {% set project_counter = 0 %}
+        <div class="cell medium-6 odd" style="margin-top: -150px; ">
+          {% for project in projects %}
+            {% if project_counter is odd %}
+            <div class="project-box ">
+              <header class="news-header" style="background-image: url('{{  TimberImage(carbon_meta('header_image', project.ID)) }}');height: 300px;"></header>
+             <div class="content">
+               <span class="news-date">{{ project.date('F Y') }}</span>
+               <h2 class="title blue upper blue-line" style="font-size: 40px">{{ project.post_title }}</h2>
+               <div class="excerpt black" style="padding: 15px 0;">{{ project.post_content|length > 100 ? project.post_content|slice(0, 100) ~ '...' : project.post_content  }}</div>
+               <br/>
+               <a href="{{ project.path }}" class="button blue-outline">Lees meer</a>
+             </div>
+           </div>
+            {% endif %}
+            {% set project_counter = project_counter + 1 %}
+          {% endfor %}
+        </div>
+        <div class="cell medium-6 even">
+          {% set project_counter = 0 %}
+          {% for project in projects %}
+            {% if project_counter is even %}
+               <div class="project-box ">
+                 <header class="news-header" style="background-image: url('{{  TimberImage(carbon_meta('header_image', project.ID)) }}');height: 300px;"></header>
+                <div class="content">
+                  <span class="news-date">{{ project.date('F Y') }}</span>
+                  <h2 class="title blue upper blue-line" style="font-size: 40px">{{ project.post_title }}</h2>
+                  <div class="excerpt black" style="padding: 15px 0;">{{ project.post_content|length > 100 ? project.post_content|slice(0, 100) ~ '...' : project.post_content  }}</div>
+                  <br/>
+                  <a href="{{ project.path }}" class="button blue-outline">Lees meer</a>
+                </div>
+              </div>
+            {% endif %}
+            {% set project_counter = project_counter + 1 %}
+
+          {% endfor %}
+        </div>
+
+      </div>
+  </div>
+</section>
+{{ include('templates/parts/project.twig') }}
+{% endblock %}

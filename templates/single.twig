@@ -1,0 +1,9 @@
+{% extends 'templates/site/base.twig' %}
+{% block content %}
+<div class="grid-container">
+  <div class="grid-x grid-x-margin push-top-bottom">
+    <div class="cell medium-12 "><h2 class="center upper blue">{{ post.title }}</h2></div>
+    <div class="cell medium-12 text-center content">{{ post.content | wpautop }}</div>
+  </div>
+</div>
+{% endblock %}

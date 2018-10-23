@@ -1,0 +1,27 @@
+<section id="topbar">
+  <div class="grid-container" style="position:relative;">
+    <div class="grid-x grid-margin-x">
+      <div class="cell medium-6">
+        <a href="{{ site.link }}" class="logo">{{ site.name }}</a>
+      </div>
+      <div class="cell medium-4">
+        <form role="search" method="get" class="hide-for-small-only" id="searchform" class="searchform" action="{{ site.url }}">
+          <div class="box">
+             <div class="container-1">
+                <input type="text" value="" name="s" id="s" placeholder="Zoeken..." />
+                <button type="submit" id="searchsubmit" />
+                     <span class="icon"><i class="fa fa-search"></i></span>
+                </button>
+             </div>
+          </div>
+        </form>
+      </div>
+      <div class="cell medium-2">
+        <a href="#" id="trigger" class="menu-trigger">
+          <i class="fas fa-times"></i>
+          <i class="fas fa-bars"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

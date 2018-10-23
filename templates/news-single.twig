@@ -1,0 +1,26 @@
+{% extends 'templates/site/base.twig' %}
+{% block content %}
+
+<header class="page-header" style="background-image: url('{{  TimberImage(carbon_meta('header_image', post.ID)) }}');"></header>
+<div class="grid-container">
+  <div class="grid-x grid-x-margin push-top-bottom">
+    <span class="news-date">{{ post.date('F Y')}}</span>
+    <div class="cell medium-12 content"><h2 class="upper blue">{{ post.title }}</h2></div>
+    <div class="cell medium-12  content">{{ post.content | wpautop }}</div>
+  </div>
+</div>
+{% set prev_class = "" %}
+{# {% if post.link.text == post.prev.link.text %}{% set prev_class = "hidden" %}{% endif %} #}
+<a href="{{ post.prev.path }}" class="news-nav prev upper {{ prev_class }}"><span class="prev-link-text">Vorig item</span> <i class="fa fa-chevron-left"></i> </a>
+
+{% set next_class = "" %}
+{# {% if post.link.text == post.next.link.text %}{% set next_class = "hidden" %}{% endif %} #}
+<a href="{{ post.next.path }}" class="news-nav next upper {{ next_class }}"><i class="fa fa-chevron-right"></i> <span class="next-link-text">Volgend item</span></a>
+
+<section id="home-collab" class="grey-section" >
+  <div class="design variant-4 grid-container ">
+    {{ include('templates/parts/team.twig') }}
+  </div>
+</section>
+
+{% endblock %}

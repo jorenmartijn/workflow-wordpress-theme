@@ -1,0 +1,12 @@
+{% extends 'templates/site/base.twig' %}
+{% block content %}
+
+<header class="page-header" style="background-image: url('{{  TimberImage(carbon_meta('header_image', post.ID)) }}');"></header>
+<div class="grid-container">
+  <div class="grid-x grid-x-margin push-top-bottom">
+    <div class="cell medium-12 "><h2 class="center upper blue">{{ post.title }}</h2></div>
+    <div class="cell medium-12  content">{{ post.content | wpautop }}</div>
+  </div>
+</div>
+
+{% endblock %}

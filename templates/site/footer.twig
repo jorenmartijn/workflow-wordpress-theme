@@ -1,0 +1,49 @@
+<footer class="footer">
+  <div class="colorBar"></div>
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      <div class="cell medium-4  white">
+        {{ carbon_option('footer_text') | wpautop }}
+      </div>
+      <div class="cell medium-8">
+        <div class="grid-container">
+          <div class="grid-x grid-margin-x">
+            <div class="cell large-6 push-bottom-25">
+              <div class="white content">
+                <h4 class="white upper">Contactinformatie</h4>
+              {{ include('templates/parts/address.twig') }}</div>
+            </div>
+            <div class="cell medium-6">
+              <div class="grid-container">
+                <h4 class="white upper">Direct naar</h4>
+                <div class="grid-x grid-margin-x">
+                  <div class="cell medium-12 large-6 push-bottom-25">
+                    <ul class=" basic-menu">
+                      {% for item in footer_left.items %}
+                      <li> <a class="nav-main-link white" href="{{ item.link }}">{{ item.title }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                  <div class="cell medium-12 large-6 push-bottom-25">
+                    <ul class=" basic-menu">
+                      {% for item in footer_right.items %}
+                      <li> <a class="nav-main-link white" href="{{ item.link }}">{{ item.title }}</a></li>
+                      {% endfor %}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      <div class="cell medium-12">
+        &copy; {{ "now" | date('Y') }} {{ site.name }} 
+      </div>
+    </div>
+  </div>
+</footer>

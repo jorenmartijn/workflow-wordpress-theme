@@ -1,0 +1,25 @@
+{% block header %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{ function('wp_title', '|', true, 'right') }} {{site.name}}</title>
+    {{ function('wp_head') }}
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.css" />
+  </head>
+  <body class="{{ body_class }}">
+    {{ include('templates/site/navbar.twig') }}
+    {{ include('templates/site/topbar.twig') }}
+    {% endblock %}
+    {% block content %}{% endblock %}
+    {% block footer %}
+    {{ include('templates/site/footer.twig') }}
+    {{ function('wp_footer') }}
+    <script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.2/dist/jquery.fancybox.min.js"></script>
+  </body>
+</html>
+{% endblock %}

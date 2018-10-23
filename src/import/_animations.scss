@@ -1,0 +1,7 @@
+@keyframes home-header-arrow {
+    0%   { opacity: 0; top: 25%; }
+    15%   { opacity: 0.2;  }
+    50%  { opacity: 1; top: 50%; }
+    90%  { opacity: 0.2;  }
+    100% { opacity: 0; top: 75%; }
+}

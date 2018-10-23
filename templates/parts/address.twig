@@ -1,0 +1,6 @@
+{{ carbon_option('footer_address') | wpautop }}
+T: {{ carbon_option('footer_phone_1')  }}<br/>
+{% if carbon_option('footer_phone_2') %}
+T: {{ carbon_option('footer_phone_2')  }}<br/>
+{% endif %}
+E-mail: <a href="mailto" class="white">{{ carbon_option('footer_email')  }}</a>

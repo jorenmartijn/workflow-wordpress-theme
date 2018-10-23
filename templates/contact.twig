@@ -1,0 +1,28 @@
+{% extends 'templates/site/base.twig' %}
+{% block content %}
+<header class="page-header" style="background-image: url('{{  TimberImage(carbon_meta('header_image', post.ID)) }}');"></header>
+<div class="grid-container">
+  <div class="grid-x grid-x-margin">
+    <div class="cell medium-6 push-top-bottom">
+      <h2 class="upper blue">{{ post.title }}</h2>
+      <h5 class="subtitle">{{ carbon_meta('subtitle', post.ID) }}</h5>
+    </div>
+    <div class="cell medium-6 push-top-bottom">
+      <div class=" content">{{ include('templates/parts/address.twig') }}</div>
+    </div>
+    </div>
+  </div>
+</div>
+<div class="map" id="map">
+  <div class="grid-container" style="height: 520px">&nbsp;</div>
+</div>
+<section id="contact-form" class="grey-section form" >
+  <div class="grid-container">
+    <div class="grid-x grid-margin-x">
+      <div class="small-12 cell push-top-bottom">
+        {{ post.content }}
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

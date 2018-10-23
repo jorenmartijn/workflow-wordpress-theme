@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,300i,900,900i');
+@import 'import/variables';
+@import 'import/animations';
+$blue : #108ac2;
+$roboto  : "Roboto", Verdana, sans-serif;
+$kohinoor : "Kohinoor Bangla", Verdana, sans-serif;
+$transition : 0.3s all ease-in-out;
+h1, h2, h3, h4, h5, h6{ font-family: $kohinoor; font-weight: 300; }
+li,
+a,
+p { font-family: $roboto; font-weight: 400; }
+ul { list-style-type: none; margin: 0; }
+.page-header {
+  height: 500px;
+  border-bottom: 1px solid black;
+  margin-bottom: 50px;
+}
+#navbar {
+  background-color: $blue;
+  height: 100vh;
+  position: fixed;
+  top: -100vh;
+  left: 0; right: 0;
+  transition: $transition;
+  padding: 200px 0;
+  .nav-main {
+    .nav-main-item { line-height: 30px; }
+    .nav-main-link { color: #fff; font-size: 30px; }
+  }
+  &.active {
+    top: 0;
+  }
+}
+#topbar {
+  background-color: #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 50px 0;
+  border-bottom: 1px solid black;
+  #trigger{
+    height: 50px;
+    width: 50px;
+    position: absolute;
+    top: -5px;
+    right: 50px;
+    .fa-times,
+    .fa-bars {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      transition: $transition;
+      font-size: 30px;
+    }
+    .fa-times { opacity: 0; }
+    .fa-bars { opacity: 1; }
+    &.active {
+      .fa-times { opacity: 1; }
+      .fa-bars { opacity: 0; }
+    }
+  }
+}
+#searchform {
+  height: 30px;
+  width: 100%;
+  position: relative;
+  transition: $transition;
+  input[type="text"] {
+    width: 100%;
+  }
+  button[type="submit"] {
+    position: absolute;
+    top: 10px;
+    right: 3%;
+  }
+}
+.logo {
+  color: #000;
+  font-size: 30px;
+  font-family: $kohinoor;
+  transition: $transition;
+  &:hover {
+    color: #108ac2;
+  }
+}
+#home-content { padding: 150px 0; }
+.footer {
+  border-top: 1px solid black;
+  margin-top: 50px;
+  padding-top: 50px;
+}
+.button {
+  border: 2px solid $blue;
+  background-color: #fff;
+  color: $blue;
+  font-size: 20px;
+  text-transform: uppercase;
+  border-radius: 30px;
+  min-height: 30px;
+  padding: 12px 30px;
+  text-align: center;
+  &.solid {
+    background-color: $blue;
+    color: #fff;
+    &:hover {
+      background-color: #fff;
+      color: $blue;
+    }
+  }
+  &.square {
+    border-radius: 0;
+  }
+  &:hover {
+    background-color: $blue;
+    color: #fff;
+  }
+}
